@@ -1,0 +1,89 @@
+
+
+/*-->HEAD<--*/
+
+.navIndex{
+    background-color: transparent!important;
+    padding: 2% 5%;
+}
+
+.navIndex .navbar-collapse{
+    flex-grow:0;
+}
+
+.headerIndex{
+    height:80vh;
+    min-height:400px;
+    background-color: #0084da;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url(../img/wave.svg);
+    
+}
+
+.headerIndex h1{
+    font-size: 5rem;
+    color:#F3F4F5;
+}
+
+.headerIndex h4{
+    color:#F3F4F5;
+    font-style: italic;
+}
+
+.nav-link{
+    color:#F3F4F5!important;
+    font-weight:bold!important;
+}
+
+.nav-link:hover{
+    color:#c0ffd5!important;
+}
+
+.headerIndex{
+    overflow: hidden;
+}
+
+.headerIndex .imgheader{
+    max-height:50vh;
+    max-width: 45vh;
+}
+
+@media (max-width: 1000px) {
+    .headerIndex{
+        background-image:none;
+    }
+    .headerIndex .imgheader{
+        max-height: 32vh;
+    }
+  }
+
+@media (max-width: 300px){
+    .headerIndex .imgheader{
+        display:none;
+    }
+}
+
+@media(max-height:600px){
+    .headerIndex .imgheader{
+        display:none;
+    }
+}
+
+/*-->TARJETAS<--*/
+
+.tarjetasIndex .card{
+    background-color: transparent !important;
+    position: relative;
+    border:none;
+    border-radius: 2%;
+    margin-top: 15px;
+    margin-right:20px;
+}
+/*-->Imagenes<--*/
+.tarjetasIndex .card-img-top{
+    max-width: 10vw;
+    max-height: 12vh;
+    margin: 0 auto;
+}

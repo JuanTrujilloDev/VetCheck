@@ -1,0 +1,44 @@
+{% load static %}
+<header class="headerIndex">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navIndex">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img class="img-fluid logo" src="{% static 'img/pawprint.svg' %}" style="max-width:40px;" onmouseover="this.src='{% static  'img/logocel.png' %}'" onmouseout="this.src='{% static  'img/pawprint.svg' %}'"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Registrate</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Iniciar Sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Acerca De</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row py-5 ">
+            <div class="col-md-6">
+                <h1 class="tituloheader">Big Test</h1>
+                <h4>VETTTTTTTTT VETTTTTTTTTTTTTTTTTT VETTTTTTTTT VETTTTTTTTT</h2>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <img class="img-fluid imgheader" src="{% static 'img/Veterinary-amico.svg' %}" />
+            </div>
+        </div>
+      </div>
+</div>
+
+
+</header>
