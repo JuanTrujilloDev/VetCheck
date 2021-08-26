@@ -13,4 +13,11 @@
 {% block content %}
 {% include 'head.html' %}
 {% include 'cards.html' %}
+{% include 'about.html' %}
+{% include 'team.html' %}
+{% include 'footer.html' %}
+
+{%  block script %}
+<script src="{% static 'js/index.js' %}"></script>  
+{% endblock %}
 {% endblock %}

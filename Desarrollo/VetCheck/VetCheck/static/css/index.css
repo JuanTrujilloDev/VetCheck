@@ -2,6 +2,32 @@
 
 /*-->HEAD<--*/
 
+
+.inicioIndex{
+    border-left: 1px solid #F3F4F5;
+}
+
+.custom-shape-divider-bottom-1629995980 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1629995980 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+}
+
+.custom-shape-divider-bottom-1629995980 .shape-fill {
+    fill: #F3F4F5;
+}
+
 .navIndex{
     background-color: transparent!important;
     padding: 2% 5%;
@@ -12,19 +38,30 @@
 }
 
 .headerIndex{
-    height:80vh;
+    min-height:80vh;
     min-height:400px;
     background-color: #0084da;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-image: url(../img/wave.svg);
+    position: relative;
     
 }
 
 .headerIndex h1{
     font-size: 5rem;
     color:#F3F4F5;
+}
+
+.contenidoHeader a{
+    font-weight: bold;
+    background-color:#F3F4F5 ;
+    color:#0084da;
+    border: none;
+}
+
+.contenidoHeader a:hover{
+    font-weight: bold;
+    background-color:#00d3bb;
+    color:#F3F4F5;
+    border: none;
 }
 
 .headerIndex h4{
@@ -46,7 +83,7 @@
 }
 
 .headerIndex .imgheader{
-    max-height:50vh;
+    max-height:45vh;
     max-width: 45vh;
 }
 
@@ -56,6 +93,15 @@
     }
     .headerIndex .imgheader{
         max-height: 32vh;
+    }
+    .custom-shape-divider-bottom-1629995980 svg {
+        display: none!important;
+    }
+    .custom-shape-divider-top-1629999082 svg {
+        display:none!important;
+    }
+    .inicioIndex{
+        border-left: none;
     }
   }
 
@@ -72,7 +118,6 @@
 }
 
 /*-->TARJETAS<--*/
-
 .tarjetasIndex .card{
     background-color: transparent !important;
     position: relative;
@@ -81,9 +126,121 @@
     margin-top: 15px;
     margin-right:20px;
 }
+
+.tarjetasEquipo .card{
+    background-color: transparent !important;
+    position: relative;
+    border:none;
+    border-radius: 2%;
+    margin-top: 15px;
+    margin-right:20px;
+}
+
+.sectionTarjetas h1, .sectionTeam h1, .sectionAbout h1{
+    font-size: 3.5rem;
+}
+
+.sectionTarjetas hr, .sectionTeam hr, .sectionAbout hr{
+    width: 5vh;
+    margin: 0 auto;
+    color:#0084da;
+    opacity: 1;
+    height:2px;
+}
+
 /*-->Imagenes<--*/
 .tarjetasIndex .card-img-top{
     max-width: 10vw;
     max-height: 12vh;
     margin: 0 auto;
 }
+.tarjetasEquipo .card-img-top{
+    max-width: 10vw;
+    max-height: 12vh;
+    margin: 0 auto;
+}
+
+/*-->ABOUT<--*/
+
+.aboutIndex .accordion-button{
+    font-size: 1.6rem!important;
+}
+
+.aboutIndex .accordion{
+    margin-top: 30%;
+}
+
+.aboutIndex a{
+    text-decoration: none!important;
+}
+
+
+/*-->FOOTER<--*/
+
+.footerIndex{
+    background-color:#0084da;
+    margin-bottom: 0!important;
+}
+
+.footerIndex .container{
+    margin-bottom: 0;
+}
+
+.footerIndex h1{
+    font-size: 4rem!important;
+    color:#F3F4F5;
+}
+
+.footerIndex .btn-primary{
+    background-color: #ef4b6c;
+    color:#F3F4F5;
+    height: 50px;
+    padding: 16px 32px;
+    font-family: Montserrat,sans-serif;
+    font-weight: 700;
+    font-size: .688rem;
+    line-height: 18px;
+    letter-spacing: 1.54px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    box-shadow: 10px 16px 40px 0 rgb(255 84 117 / 46%);
+    border:none;
+}
+
+.footerIndex .btn-primary:hover{
+    transition: 0.5s ease;
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #ef4b6c;
+}
+
+.custom-shape-divider-top-1629999082 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1629999082 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1629999082 .shape-fill {
+    fill: #F3F4F5;
+}
+
+.footerIndex .fa:hover{
+    color:#ef4b6c!important;
+}
+@media (max-width: 1000px) {
+  
+    .custom-shape-divider-top-1629999082 svg {
+        display:none!important;
+    }
+
+}
+
