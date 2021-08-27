@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css'%}">
+{% endblock %}
+
+{% block content %}
+<section class="login">
+<div>
+  <div class="row">
+    <div class="loginImg col-md-4 text-center">
+      <img class="img-fluid" src="{% static 'img/adpot.svg' %}"/>
+     <a href="{% url 'home' %}" style="text-decoration: none;"><h1 class="textoImg">¡Unete ahora!</h1></a> 
+      <h4>Y forma parte del grupo <strong>VetCheck</strong> apasionado por cuidar, amar y proteger a los animales.</h4>
+      <img class="img-fluid pawprint" src="{% static 'img/pawprint.svg'%}">
+    </div>
+
+    <div class="formulario col-md-8 py-5">
+      <div class="d-flex justify-content-center">
+        <form action="." method="POST">{% csrf_token %}
+          <img class="img-fluid" src="{% static 'img/loginzul.png' %}">
+          <div class=" form-group">
+            <label for="exampleInputEmail1">Usuario</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="username">
+          </div>
+
+          <div class="form-group">
+            {{form.password.errors}}
+            <label for="exampleInputPassword1">Contraseña</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" name="password">
+            <div class="d-flex justify-content-end">
+            <a class="float-right" style="font-weight: bold; text-decoration: none;" href="#">Olvide mi contraseña.</a>
+          </div>
+          </div>
+
+
+          <div class="form-group my-3 d-flex justify-content-center">
+            {{form.captcha.errors}}
+            {{form.captcha}}
+          </div>
+          <button type="submit" class="btn btn-primary">Ingresa</button>
+
+          <div class="col-md-12 ">
+            <div class="login-or">
+               <hr class="hr-or">
+               <span class="span-or">or</span>
+            </div>
+         </div>
+
+         <div class="col-md-12 mb-3">
+          <p class="text-center">
+             <a href="{% url 'social:begin' "google-oauth2" %}" class="google btn mybtn"><i class="fa fa-google-plus">
+             </i> Signup using Google
+             </a>
+          </p>
+       </div>
+       <div class="form-group">
+          <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+       </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}
+
+
+{% block script %}
+<script src="{% static 'js/login.js' %}"></script>
+{% endblock %}

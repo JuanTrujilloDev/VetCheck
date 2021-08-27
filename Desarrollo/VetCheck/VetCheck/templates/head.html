@@ -6,19 +6,17 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Registrate</a>
+          <a class="nav-link" href="#aboutIndex">Acerca De</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Acerca De</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link inicioIndex" href="#">Iniciar Sesión</a>
+          <a class="nav-link inicioIndex" href="{% url 'login' %}">Iniciar Sesión</a>
         </li>
       </ul>
     </div>
@@ -30,19 +28,20 @@
     <div class="container">
         <div class="row py-5 ">
             <div class="col-md-6 contenidoHeader">
+              <span class="align-middle">
                 <h1 class="tituloheader">VetCheck</h1>
                 <h4>¡Datos médicos y soluciones tecnológicas para tu veterinaria, solícita una <strong>demo</strong> ahora!</h4>
                 <div class="d-flex justify-content-start"><a class="btn btn-primary btn-lg">¡Solicitar!</a></div>
-                
+              </span>
             </div>
-            <div class="col-md-6 d-flex justify-content-center">
+            <div class="col-md-6 d-flex justify-content-end">
                 <img class="img-fluid imgheader" src="{% static 'img/Veterinary-amico.svg' %}" />
             </div>
         </div>
       </div>
 </div>
 
-<div class="custom-shape-divider-bottom-1629995980">
+<div class="custom-shape-divider-bottom-1630094623">
   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
   </svg>
