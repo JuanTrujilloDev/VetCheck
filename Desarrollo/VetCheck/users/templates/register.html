@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="register">
+    <div class="register-form">
+      <div class="row">
+          
+        <div class="formulario col-md-8 pt-5">
+          <div class="d-flex justify-content-center">
+            <form class="py-2 px-5 rounded" action="." method="POST">{% csrf_token %}
+            <div class="text-center"><img class="img-fluid" src="{% static 'img/loginzul.png' %}"></div>
+              
+              <div class=" form-group mb-2">
+                <label for="exampleInputEmail1">Usuario</label> 
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Usuario" name="username">
+                {{form.username.errors}}
+                {{form.username.help_text}}
+                
+              </div>
+    
+              <div class="form-group mb-2">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña" name="password1">
+                <div class="pwstrength_viewport_progress"></div>
+                {{form.password1.errors}}
+                {{form.password1.help_text}}
+               
+              </div>
+
+              <div class="form-group mb-2">
+                <label for="exampleInputPassword1">Repite la contraseña</label>
+                <input type="password" class="form-control" id="password2" placeholder="Contraseña" name="password2">
+                <div class="pwstrength_viewport_progress"></div>
+                {{form.password2.errors}}
+                {{form.password2.help_text}}
+              </div>
+
+              <div class="form-group mb-2">
+               
+                <label for="exampleInputPassword1">Email</label>
+                <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" name="email">
+                {{form.email.errors}}
+                {{form.email.help_text}}
+              </div>
+    
+    
+              <div class="form-group my-3">
+                <div class="text-center"> {{form.captcha}}</div>
+                {{form.captcha.errors}}
+               
+              </div>
+              <button type="submit" class="btn btn-primary">Ingresa</button>
+    
+              <div class="col-md-12 ">
+                <div class="login-or">
+                   <hr class="hr-or">
+                   <span class="span-or">o</span>
+                </div>
+             </div>
+
+           <div class="form-group">
+              <p class="text-center">¿Ya tienes una cuenta? <a href="{% url 'login' %}" id="signup">Ingresa</a></p>
+           </div>
+    
+            </form>
+          </div>
+        </div>
+        <div class="loginImg col-md-4 text-center">
+            <img class="img-fluid" src="{% static 'img/fish.svg' %}"/>
+           <a href="{% url 'home' %}" style="text-decoration: none;"><h1 class="textoImg">¡Unete ahora!</h1></a> 
+            <h4>Y forma parte del grupo <strong>VetCheck</strong> apasionado por cuidar, amar y proteger a los animales.</h4>
+            <img class="img-fluid pawprint" src="{% static 'img/pawprint.svg'%}">
+          </div>
+      </div>
+    </div>
+    </section>
+
+
+{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript" src="{% static 'js/pwstrength-bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function () {
+"use strict";
+var options = {};
+options.ui = {
+bootstrap4: true,
+container: "#pwd-container",
+viewports: {
+progress: ".pwstrength_viewport_progress"
+},
+showVerdictsInsideProgressBar: true
+};
+options.common = {
+debug: true,
+
+};
+$('#password').pwstrength(options);
+$('#password2').pwstrength(options);
+});
+
+</script>
+
+{% endblock %}
