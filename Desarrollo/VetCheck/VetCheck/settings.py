@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'social_django',
     'captcha',
     'VetCheck',
-    'users',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
