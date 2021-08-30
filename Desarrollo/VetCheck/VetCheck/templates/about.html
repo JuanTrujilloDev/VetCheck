@@ -1,67 +1,35 @@
 {% load static %}
 
 <section class="container aboutIndex my-5 sectionAbout text-center" id="aboutIndex">
-    <h2 class="mt-5">Conoce sobre VetCheck</h2>
-    <hr class="mb-5">
-    <div class="row">
-    <div class="col-md-6 col-sm-12" >
-
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-               ¿Cómo funciona?
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>VetCheck permite a los veterinarios y clientes permanecer actualizados sobre el estado de sus mascotas. </strong>Actualmente una de las principales problemáticas que hay en las veterinarias es la disponibilidad de los diagnósticos de las mascotas, VetCheck busca que los veterinarios tengan acceso a los diagnósticos realizados por otros veterinarios, visualizados desde una plataforma, registrados de una manera fácil y rápida, con datos claros y actualizados, agilizando el trabajo de los veterinarios, aumentando la productividad de las clínicas veterinarias. 
-            </div>
+    <h2 class="mt-3">Conoce sobre VetCheck</h2>
+    <hr class="mb-0">
+    <div class="tarjetasAbout">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-sm-6">
+            <img src="{% static 'img/beneficios.svg' %}" class="card-img-top" alt="...">
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-bodyAbout card-body" data-aos="fade-left" data-aos-duration="1200" data-aos-once="true">
+            <h4 class="card-title">¿Qué beneficios trae?</h4>
+            <p class="card-text text-start">VetCheck permite a veterinarios y clientes permanecer actualizados sobre el estado de las mascotas, dando acceso a diagnósticos previos desde cualquier computadora.</p>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-               ¿Quién puede usarla?
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>VetCheck puede ser usada por todas las veterinarias. </strong>  Abierto a todo público, VetCheck da la opción para que todas las veterinarias, farmacias independientes y dueños de mascotas puedan hacer uso de sus herramientas. 
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-             ¿Qué beneficios trae?
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>VetCheck mejora la experiencia del cliente. </strong> Mejora la conexión de las veterinarias y farmacias con sus clientes, facilita el pago de los productos y/o servicios brindados a las mascotas, facilita información indispensable a los veterinarios sobre sus pacientes, proporciona información actual sobre el estado de las mascotas a los dueños.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-             ¿Cómo se realizaron los diseños?
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <strong>VetCheck utilizo las imágenes de los siguientes creadores: </strong> Las  ilustraciones se tomaron de la página <strong><a href="https://storyset.com/job" target="_blank">Story Set</a></strong>, los íconos fueron extraídos de <strong><a href="https://fontawesome.com" target="_blank">FontAwesome</a></strong> y las imágenes fueron extraídas de <strong><a href="https://freepik.com" target="_blank">FlatIcon y realizados por Freepik</a></strong>.
-             Los diseños de la página fueron realizados con mucha dedicación por el equipo Desarrollador de VetCheck.
-            </div>
-          </div>
-        </div>
-        
       </div>
     </div>
 
-    <div class="col-md-6 d-flex justify-content-center">
-        <img class="img-fluid imgheader" src="{% static 'img/doggy.svg' %}" />
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-bodyAbout card-body" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+            <h4 class="card-title">¿Qué busca mejorar?</h4>
+            <p class="card-text text-start">VetCheck busca mejorar la relación de las clínicas veterinarias con sus clientes, proporcionando información importante a los veterinarios sobre sus pacientes también informa sobre el estado actual de las mascotas a sus dueños y por último, facilita el pago de los productos y servicios brindados a las mascotas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <img src="{% static 'img/mejora.svg' %}" class="imagenAbout card-img-top" alt="...">
+  </div>
     </div>
-    </div>
+
 </section>

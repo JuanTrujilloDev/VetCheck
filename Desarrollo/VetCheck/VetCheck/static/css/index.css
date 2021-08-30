@@ -1,11 +1,16 @@
-
-
+.body{
+    background-color: #F3F4F5;
+}
+p{
+	color:#8F95A8;
+}
+h2,h4,h5,h6,h7{
+    color:#5B5F6B ;
+}
 /*-->HEAD<--*/
 .headerIndex .navbar-collapse li{
     margin-left: 40px;
 }
-
-
 
 .custom-shape-divider-bottom-1630094623 {
     position: absolute;
@@ -140,14 +145,19 @@
     margin-right:20px;
 }
 
-.sectionTarjetas h1, .sectionTeam h1, .sectionAbout h1{
-    font-size: 3.5rem;
+.tarjetasAbout .card{
+    background-color: transparent !important;
+    position: relative;
+    border:none;
+    border-radius: 2%;
+    margin-top: 15px;
+    margin-right:20px;
 }
 
 .sectionTarjetas hr, .sectionTeam hr, .sectionAbout hr{
+    background: transparent !important;
     width: 5vh;
     margin: 0 auto;
-    color:#0084da;
     opacity: 1;
     height:2px;
 }
@@ -163,26 +173,21 @@
     max-height: 12vh;
     margin: 0 auto;
 }
-
+.tarjetasAbout .imagenAbout{
+    max-width: 80%;
+}
 /*-->ABOUT<--*/
 
-.aboutIndex .accordion-button{
-    font-size: 1.6rem!important;
-}
-
-.aboutIndex .accordion{
-    margin-top: 30%;
-}
-
-.aboutIndex a{
-    text-decoration: none!important;
-}
-
-.aboutIndex .accordion-body{
-    text-align: left;
-}
 
 /*-->FOOTER<--*/
+.footerIndex h2{
+    color: #F3F4F5;
+}
+
+.footerIndex h3{
+    color: #F3F4F5;
+    font-style: italic;
+}
 
 .footerIndex{
     background-color:#0084da;
@@ -199,8 +204,8 @@
 }
 
 .footerIndex .btn-primary{
-    background-color: #ef4b6c;
-    color:#F3F4F5;
+    background-color: #F3F4F5;
+    color:#0084da;
     height: 60px;
     padding: 16px 32px;
     font-family: Montserrat,sans-serif;
@@ -210,15 +215,15 @@
     letter-spacing: 1.54px;
     text-transform: uppercase;
     border-radius: 25px;
-    box-shadow: 10px 16px 40px 0 rgb(255 84 117 / 46%);
     border:none;
 }
 
 .footerIndex .btn-primary:hover{
+    color: #F3F4F5;
     transition: 0.5s ease;
-    background-color: #f55776;
+    background-color: #02d4ba;
     box-shadow: none;
-    border: 1px solid #ef4b6c;
+    border: 1px solid #02d4ba;
 }
 
 .custom-shape-divider-top-1630094667 {
@@ -242,7 +247,7 @@
 }
 
 .footerIndex .fa:hover{
-    color:#ef4b6c!important;
+    color:#02d4ba !important;
 }
 @media (max-width: 1000px) {
   

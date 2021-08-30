@@ -33,7 +33,7 @@ class CUserCreationForm(UserCreationForm):
             if email2 == None:
                 return email
             else:
-                raise forms.ValidationError("El correo electronico ya existe!")
+                raise forms.ValidationError("El correo electronico ya esta vinculado con otra cuenta!")
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
