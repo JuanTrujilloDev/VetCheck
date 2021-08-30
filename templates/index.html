@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css'%}">
+{% endblock %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+{% include 'head.html' %}
+{% include 'about.html' %}
+{% include 'cards.html' %}
+{% include 'team.html' %}
+{% include 'footer.html' %}
+
+{%  block script %}
+<script src="{% static 'js/index.js' %}"></script>  
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+
+<section class="container aboutIndex my-5 sectionAbout text-center" id="aboutIndex">
+    <h2 class="mt-3">Conoce sobre VetCheck</h2>
+    <hr class="mb-0">
+    <div class="tarjetasAbout">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-sm-6">
+            <img src="{% static 'img/beneficios.svg' %}" class="card-img-top" alt="...">
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-bodyAbout card-body" data-aos="fade-left" data-aos-duration="1200" data-aos-once="true">
+            <h4 class="card-title">¿Qué beneficios trae?</h4>
+            <p class="card-text text-start">VetCheck permite a veterinarios y clientes permanecer actualizados sobre el estado de las mascotas, dando acceso a diagnósticos previos desde cualquier computadora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-bodyAbout card-body" data-aos="fade-right" data-aos-duration="1200" data-aos-once="true">
+            <h4 class="card-title">¿Qué busca mejorar?</h4>
+            <p class="card-text text-start">VetCheck busca mejorar la relación de las clínicas veterinarias con sus clientes, proporcionando información importante a los veterinarios sobre sus pacientes también informa sobre el estado actual de las mascotas a sus dueños y por último, facilita el pago de los productos y servicios brindados a las mascotas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <img src="{% static 'img/mejora.svg' %}" class="imagenAbout card-img-top" alt="...">
+  </div>
+    </div>
+
+</section>
