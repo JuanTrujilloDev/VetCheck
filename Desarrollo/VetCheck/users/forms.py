@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 
+
+##--> Formulario login
 class LoginCaptcha(AuthenticationForm):
     captcha = ReCaptchaField(required = True, widget= ReCaptchaV2Checkbox(attrs={'data-size':'normal', 'required':True}))
 
@@ -12,6 +14,8 @@ class LoginCaptcha(AuthenticationForm):
         model = User
         fields = ['username', 'password', 'captcha']
 
+
+##--> Creacion de usuarios.
 class CUserCreationForm(UserCreationForm):
     captcha = ReCaptchaField(required = True, widget= ReCaptchaV2Checkbox(attrs={'data-size':'normal', 'required':True}))
     class Meta:

@@ -4,13 +4,17 @@ from django.db.models.signals import m2m_changed
 from django.dispatch import receiver
 
 
+## Manejo de perfiles por grupo de usuarios
 @receiver(m2m_changed, sender=User.groups.through)
 def manejoPerfiles(action, model, instance, **kwargs):
+    ## Accion preadd de los grupos
     if action == "post_add":
         grupo_cliente = Group.objects.get(name="Cliente")
         grupo_vet = Group.objects.get(name="Veterinario")
         grupo_admin = Group.objects.get(name="Administrativo")
 
+
+        ## Dependiendo del grupo de añaden o eliminan los perfiles
         if instance.groups.filter(name = grupo_cliente.name).exists():
             PerfilCliente.objects.create(usuario = instance)
 

@@ -14,5 +14,41 @@ class PerfilCliente (models.Model):
     #Mascotas Asociadas
 
 
+    #save method para creacion del slug
+
+    #get_absolute_url para el perfil
+
+
+
+
+
+
+
+
+
+
+
+#Perfil Vet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Perfil Admin
+
+
 
 
