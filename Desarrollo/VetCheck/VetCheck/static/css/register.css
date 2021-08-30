@@ -1,6 +1,8 @@
 .register{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #f3f4f5;
 }
 
@@ -13,6 +15,13 @@
     .formulario{
         padding-bottom: 1rem!important;
     }
+}
+
+@media (max-width: 1000px){
+    .loginImg{
+        display:none;
+    }
+    .register{overflow-y:auto;}
 }
 
 .login-or {
@@ -51,17 +60,17 @@
         font-weight: bold;
     }
 
-    .register-form{
-        height: 100vh;
+    .register-form, .formulario{
+        min-height: 100vh!important;
     }
     .loginImg{
-        height: 100vh;
+        min-height: 100vh!important;
         
     }
     
     .loginImg img{
-        max-width: 100vh;
-        max-height: 100vh;
+        width: 70%;
+        height: 70%;
     }
     
     .loginImg{

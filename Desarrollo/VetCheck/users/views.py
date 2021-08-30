@@ -1,26 +1,30 @@
 from typing import Type
+from django.core import mail
 from django.http import request
-from django.http.response import HttpResponse
-from django.shortcuts import redirect, render
-from django.urls import reverse_lazy
+from django.http.response import HttpResponseRedirect, HttpResponse
+from django.shortcuts import redirect
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView
 from .forms import LoginCaptcha
 from django.contrib.auth.models import User
 from django.views import generic
 from .forms import CUserCreationForm
 from django.contrib.auth.models import Group
-from django.core.mail import EmailMessage
-from .tokens import account_activation_token
+from django.core.mail import send_mail
+from django.contrib.auth.tokens import default_token_generator
 from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes, force_text
+from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
+from django.contrib import messages
 # Create your views here.
 
 class CLoginView(LoginView):
     template_name = "login.html"
     redirect_authenticated_user = True
     authentication_form = LoginCaptcha
+
+    ##ALERTA USUARIO NO VERIFICADO
 
 
 class CUserCreationView(generic.CreateView):
@@ -40,32 +44,34 @@ class CUserCreationView(generic.CreateView):
         user.save()
         group = Group.objects.get(name = 'Cliente')
         user.groups.add(group)
-        current_site = get_current_site(request)
+        current_site = get_current_site(self.request)
         mail_subject = 'Confirma tu cuenta VetCheck'
         message = render_to_string('email_activation.html', {
-            'user': user,
             'domain': current_site.domain,
-            'uid':  urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-            'token':account_activation_token.make_token(user),
-        })
+            'user': user,
+            'uid':  urlsafe_base64_encode(force_bytes(user.pk)),
+            'token':   default_token_generator.make_token(user),},
+            )
         to_email = form.cleaned_data.get('email')
-        email = EmailMessage(
-            mail_subject, message, to=[to_email]
+        send_mail(
+            mail_subject, message, 'vetcheck@gmail.com', [to_email]
         )
-        email.send()
 
-        return super().form_valid(form)
+        messages.success(self.request, 'Por favor confirma tu email para ingresar.')
+        return HttpResponseRedirect(reverse('login'))
 
 def activate_email(request, uidb64, token):
     try:
-        uid = force_text(urlsafe_base64_decode(uidb64))
+        uid = urlsafe_base64_decode(uidb64).decode()
         user = User.objects.get(pk = uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
-    if user is not None and account_activation_token(user, token):
+    
+    if user is not None and default_token_generator.check_token(user, token):
         user.is_active = True
         user.save()
-        return HttpResponse('Tu cuenta ha sido activada ya puedes iniciar sesion!')
+        messages.success(request, 'Email confirmado correctamente, ahora puedes ingresar.')
+        return HttpResponseRedirect(reverse('login'))
     else:
         return HttpResponse('Link de activacion invalido!')
 
