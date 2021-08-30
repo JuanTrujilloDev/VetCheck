@@ -22,7 +22,7 @@ class CUserCreationForm(UserCreationForm):
     def clean_email(self):
         email = self.cleaned_data.get('email')
         try:
-            email2 = User.objects.get(email = email)
+            email2 = User.objects.get(email__iexact = email)
         except User.DoesNotExist:
             email2 = None
         finally:
@@ -34,7 +34,7 @@ class CUserCreationForm(UserCreationForm):
     def clean_username(self):
         username = self.cleaned_data.get('username')
         try:
-            username2 = User.objects.get(username = username)
+            username2 = User.objects.get(username__iexact = username)
         except User.DoesNotExist:
             username2 = None
         finally:
