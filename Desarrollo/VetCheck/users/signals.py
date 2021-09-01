@@ -4,47 +4,96 @@ from django.db.models.signals import m2m_changed
 from django.dispatch import receiver
 
 
-## Manejo de perfiles por grupo de usuarios
-@receiver(m2m_changed, sender=User.groups.through)
-def manejoPerfiles(action, model, instance, **kwargs):
-    ## Accion preadd de los grupos
+from django.db.models.signals import m2m_changed
+from django.contrib.auth.models import User, Group
+from django.dispatch import receiver
+from .models import PerfilCliente
+
+@receiver(m2m_changed, sender = User.groups.through)
+def agregarPerfil(instance, action, reverse, *args, **kwargs):
+    grupo_cliente = Group.objects.get(name = "Cliente")
+    grupo_veterinario = Group.objects.get(name = "Veterinario")
+    grupo_administrativo = Group.objects.get(name = "Administrativo")
+    
+    
     if action == "post_add":
-        grupo_cliente = Group.objects.get(name="Cliente")
-        grupo_vet = Group.objects.get(name="Veterinario")
-        grupo_admin = Group.objects.get(name="Administrativo")
+        
 
 
-        ## Dependiendo del grupo de añaden o eliminan los perfiles
-        if instance.groups.filter(name = grupo_cliente.name).exists():
-            PerfilCliente.objects.create(usuario = instance)
+        if  grupo_cliente in instance.groups.all():
+            try:
+                perfil = PerfilCliente.objects.get(usuario = instance)
+            except:
+                perfil = None
 
-        elif instance.groups.filter(name = grupo_vet.name).exists():
-            #Se crearia el perfil del cliente
-            print("Se crearia el perfil del cliente")
+            finally:
+                if perfil == None:
+                    PerfilCliente.objects.create(usuario = instance)
 
-        elif instance.groups.filter(name = grupo_admin.name).exists():
-            #Se crearia el perfil administrador
-            print("Se crearia el perfil administrador")
+        elif grupo_veterinario in instance.groups.all():
+            '''
+            SE TRAE EL PERFIL Veterinario
+            try:
+                perfil = PerfilEmpresa.objects.get(usuario = instance)
+            except:
+                perfil = None
 
-    ### action == PRE_REMOVE --> 
+            finally:
+                if perfil == None:
+                    PerfilEmpresa.objects.create(usuario = instance)'''
+
+        elif grupo_administrativo in instance.groups.all():
+            '''
+            SE TRAE EL PERFIL administrativo
+            try:
+                perfil = PerfilModerador.objects.get(usuario = instance)
+            except:
+                perfil = None
+
+            finally:
+                if perfil == None:
+                    PerfilModerador.objects.create(usuario = instance)'''
+
     if action == "pre_remove":
-        grupo_cliente = Group.objects.get(name="Cliente")
-        grupo_vet = Group.objects.get(name="Veterinario")
-        grupo_admin = Group.objects.get(name="Administrativo")
 
-        if instance.groups.filter(name = grupo_cliente.name).exists():
-            perfil = PerfilCliente.objects.get(usuario = instance)
-            PerfilCliente.delete(perfil)
+        if  grupo_cliente in instance.groups.all():
+            try:
+                perfil = PerfilCliente.objects.get(usuario = instance)
+            except:
+                perfil = None
 
-        elif instance.groups.filter(name = grupo_vet.name).exists():
-            #Se eliminaria el perfil del cliente
-            print("Se eliminaria el perfil del cliente")
+            finally:
+                if perfil != None:
+                    perfil.delete()
 
-        elif instance.groups.filter(name = grupo_admin.name).exists():
-            #Se eliminaria el perfil administrador
-            print("Se eliminaria el perfil administrador")
+        elif grupo_veterinario in instance.groups.all():
+            '''
+            SE TRAE EL PERFIL Veterinario
+             try:
+                perfil = PerfilCliente.objects.get(usuario = instance)
+            except:
+                perfil = None
 
-            
+            finally:
+                if perfil != None:
+                    perfil.delete()'''
+
+        elif grupo_administrativo in instance.groups.all():
+            '''
+            SE TRAE EL PERFIL administrativo
+             try:
+                perfil = PerfilCliente.objects.get(usuario = instance)
+            except:
+                perfil = None
+
+            finally:
+                if perfil != None:
+                    perfil.delete()'''
+
+
+
+
+
 
 
 

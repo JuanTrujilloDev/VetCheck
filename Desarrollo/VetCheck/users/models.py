@@ -13,6 +13,8 @@ class PerfilCliente (models.Model):
     #slug
     #Mascotas Asociadas
 
+    def __str__(self):
+        return self.usuario.username
 
     #save method para creacion del slug
 

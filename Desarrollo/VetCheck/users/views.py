@@ -17,6 +17,7 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 class CLoginView(LoginView):
@@ -74,6 +75,15 @@ def activate_email(request, uidb64, token):
         return HttpResponseRedirect(reverse('login'))
     else:
         return HttpResponse('Link de activacion invalido!')
+
+@login_required(login_url="/login")
+def socialSuccess(request):
+    defaultgroup = Group.objects.get(name = 'Cliente')
+    user = request.user
+    user.groups.add(defaultgroup)
+
+    return redirect('login')
+
 
     
         
