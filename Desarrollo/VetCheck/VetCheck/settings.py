@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'social_django',
     'captcha',
     'VetCheck',
+    'vetmain',
     'users.apps.UsersConfig',
 ]
 

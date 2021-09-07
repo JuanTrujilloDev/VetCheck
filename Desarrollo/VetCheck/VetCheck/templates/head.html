@@ -12,20 +12,26 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
         </li>
+        {% if not request.user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link" href="#aboutIndex">Acerca De</a>
         </li>
-        {% if not request.user.is_authenticated %}
         <li class="nav-item">
           <a class="nav-link inicioIndex" href="{% url 'login' %}">Iniciar Sesión</a>
         </li>
         {% else %}
+
+        {% if request.user.perfilcliente %}
+        <li class="nav-item">
+          <a class="nav-link inicioIndex" href="{% url 'home-cliente' %}">VetCheck</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link inicioIndex" href="#">Solicitar Cita</a>
         </li>
         <li class="nav-item">
           <a class="nav-link inicioIndex" href="#">Mi Perfil</a>
         </li>
+        {% endif %}
 
         {% endif %}
       </ul>

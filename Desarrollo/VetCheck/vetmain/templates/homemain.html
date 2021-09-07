@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/vetmain.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="home-cliente">
+{% include 'navmain.html' %}
+{% include 'content-cliente.html' %}
+
+</section>
+{% endblock %}

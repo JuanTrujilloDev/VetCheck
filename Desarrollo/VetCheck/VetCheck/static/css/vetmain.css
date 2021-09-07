@@ -1,0 +1,137 @@
+/*Section cliente*/
+
+.home-cliente{
+    height: 100%!important;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+
+
+
+
+
+/* Navbar cliente */
+
+.navcliente .navbar{
+    background-color: #0084da!important;
+}
+
+.navcliente .navbar-brand{
+    color:#f3f4f5; font-weight:lighter; font-style: italic;
+    font-size: 1.8rem;
+}
+
+.navcliente .navbar-brand:hover{
+    color:#02d4ba; font-weight:lighter; font-style: italic;
+}
+
+.navcliente .navbar-brand:hover  img{
+    content: url('../img/logocel.png');
+}
+
+.navcliente .navbar .nav-link{
+    color: #f3f4f5 !important;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.navcliente .navbar  .active{
+    opacity: 1!important;
+    color: #f3f4f5 !important;
+    font-weight: bold;
+}
+
+.navcliente .navbar-brand img{
+    max-width:50px;
+}
+
+.secondary-items{
+    display: none!important;
+}
+
+.nav-linkMB{
+    display:none;
+}
+@media (max-width:991px){
+    .secondary-items{
+        display: table!important;
+    }
+    .sidebarOutside{
+        display:none!important;
+    }
+
+    .span-sidebar{
+        display:none!important;
+    }
+    .nav-linkPC{
+        display: none;
+    }
+    .nav-linkMB{
+        display:table;
+    }
+}
+
+.sidebarOutside{
+    height: 100%!important;
+}
+
+.sidebar{
+    height: 100%!important;
+    background-color: #0084da !important;
+}
+
+.content-cliente{
+    height: 100%;
+}
+.navcliente .span-sidebar{
+    font-size: 2rem!important;
+    color:#f3f4f5;
+    
+}
+.navcliente .span-sidebar:hover{
+    color: #02d4ba;
+}
+.sidebar .nav-link{
+    color: #f3f4f5 !important;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.sidebar .active{
+    background-color: #f3f4f5f5!important;
+    opacity: 1!important;
+    color:#0084da !important;
+    font-weight: bold;
+}
+.sidebar .nav-link:hover{
+    opacity: 1!important;
+
+}
+
+.content-cliente .contenidoInner{
+    overflow-y: auto;
+    height: 100%;
+    position: relative;
+}
+
+.content-cliente .contenidoInner::-webkit-scrollbar-track
+{
+	border: 5px solid white;
+	border-color: transparent;
+	background-color: #d3d3d3;
+}
+
+.content-cliente .contenidoInner::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #dfe6e9;
+}
+
+.content-cliente .contenidoInner::-webkit-scrollbar-thumb
+{
+	background-color: #74b9ff;
+	border-radius: 10px;
+}
