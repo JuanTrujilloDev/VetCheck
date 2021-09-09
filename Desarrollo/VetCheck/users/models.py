@@ -1,7 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
+from django.db.models.base import Model
 # Create your models here.
+
+class Departamento(models.Model):
+    pass
+
+
+class Ciudad(models.Model):
+    pass
 
 class PerfilCliente (models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -12,6 +20,7 @@ class PerfilCliente (models.Model):
     direccion = models.CharField(verbose_name= "Direccion", max_length = 60)
     #slug
     #Mascotas Asociadas
+
 
     def __str__(self):
         return self.usuario.username

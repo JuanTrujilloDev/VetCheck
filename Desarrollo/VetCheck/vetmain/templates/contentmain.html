@@ -1,0 +1,26 @@
+{% load static %}
+
+<section class="content-main row d-flex justify-content-center">
+
+    <div class="col-md-2  sidebarOutside ps-0" id="menux"> 
+        <div class="d-flex sidebar flex-column px-2 py-2">
+            <ul class="nav nav-pills flex-column">
+              <li class="nav-item"><a href="#" class="nav-link active  mb-2" aria-current="page"><i class="bi bi-house-door-fill me-2"></i><small>Inicio</small></a></li>
+              <li><a href="#" class="nav-link  mb-2"><i class="fa fa-paw me-2"></i><small>Mis Mascotas</small></a></li>
+              <li><a href="#" class="nav-link  mb-2"><i class="bi bi-person-fill me-2"></i><small>Mi Perfil</small></a></li>
+              <li><a href="#" class="nav-link  mb-2"><i class="bi bi-calendar2-check-fill me-2"></i><small>Solicitar Citas</small></a></li>
+              <li><a href="#" class="nav-link  mb-2"><i class="bi bi-file-earmark-medical-fill me-2"></i><small>Historial Medico</small></a></li>
+              <li><a href="#" class="nav-link  mb-2"><i class="bi bi-sliders me-2"></i>Ajustes</a></li>
+              <li><a href="#" class="nav-link mb-2"><i class="bi bi-box-arrow-right me-2"></i><small>Cerrar Sesión</small></a></li>
+            </ul>
+          </div>
+      </div>
+    <div class="col-lg-10 col-sm-12 contenidoInner row d-flex justify-content-center px-0">
+       
+      {% include 'mascotascliente.html' %}
+      
+
+
+    </div>
+
+</section>

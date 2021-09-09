@@ -13,6 +13,7 @@ class HomeClienteView(LoginRequiredMixin, generic.TemplateView):
             if request.user.groups.filter(name = 'Cliente').exists() and PerfilCliente.objects.filter(usuario = request.user).exists():
                 return super().get(self, request)
             else:
+                ## REDIRECT A 404
                 return(redirect('home'))
         
         except:

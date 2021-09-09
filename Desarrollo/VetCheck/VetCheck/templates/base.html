@@ -5,17 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 {% block css %}
 
 {% endblock %}
-    <link rel = "icon" href = 
-    "{% static 'img/logoprincipal.ico' %}" 
-        type = "image/x-icon">
-    <title>{{title}}</title>
+    <link rel = "icon" href = "{% static 'img/logoprincipal.ico' %}" type = "image/x-icon"> <title>{{title}}</title>
 </head>
 <body>
     {% block content %}
@@ -23,12 +20,20 @@
 </body>
 {% load static %}
 <script src="{% static 'js/bootstrap.js' %}"></script>
-<script src="{% static 'js/jquery.js' %}"></script>
-<script src="https://use.fontawesome.com/5937b19dbc.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init();
+
+   $(function() {
+  AOS.init();
+    });
+
+    
 </script>
+<script src="https://kit.fontawesome.com/03057d267f.js" crossorigin="anonymous"></script>
 {% block script %}
 
 {% endblock %}

@@ -20,5 +20,23 @@
 html{
     margin: 0;
     height: 100%;
-    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-track
+{
+	border: 5px solid white;
+	border-color: transparent;
+	background-color: #d3d3d3;
+}
+
+body::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #dfe6e9;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #74ccff;
+	border-radius: 10px;
 }

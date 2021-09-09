@@ -2,12 +2,76 @@
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/vetmain.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css">
 {% endblock %}
 
 {% block content %}
-<section class="home-cliente">
+<section class="home-main">
 {% include 'navmain.html' %}
-{% include 'content-cliente.html' %}
+
+
+
+{% if request.user.perfilcliente %}
+{% include 'contentmain.html' %}
+
+{% endif %}
+
+
+
+
+
+
+
+
 
 </section>
+{% endblock %}
+
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/package.json"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/locales-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+        var calendarUI = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarUI,{
+            header: {
+            left: 'prev,next today title',
+            right: 'month,agendaDay'
+            },
+            themeSystem: 'bootstrap',
+            initialView: 'dayGridMonth',
+            showNonCurrentDates: false,});
+            calendar.render();
+            calendar.setOption('locale','es');
+            $('#icox').on('click', function() {
+
+                $(this).children().toggleClass('active');
+                $('#menux').toggleClass('active');
+                if ($('.contenidoInner').hasClass('col-lg-10')){
+                $('.contenidoInner').toggleClass('col-lg-12');
+                $('.contenidoInner').removeClass('col-lg-10');
+
+                }else{
+                $('.contenidoInner').toggleClass('col-lg-10');
+                $('.contenidoInner').removeClass('col-lg-12');
+                calendar.destroy();
+                calendar.render();
+                calendar.setOption('locale','es');}
+
+
+
+    });
+         
+        
+
+        
+    });
+  
+
+
+
+  
+</script>
 {% endblock %}

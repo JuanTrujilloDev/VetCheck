@@ -1,19 +1,33 @@
-/*Section cliente*/
+/* Tarjetas */
+.contentCard{
+    border-radius: 1.25rem;
+    border: .5px solid rgb(228, 228, 228);
+    background-color: #fff;
+}
 
-.home-cliente{
+
+
+/*Section home*/
+
+.home-main{
     height: 100%!important;
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
-
-
-
-
-
-
 /* Navbar cliente */
+
+ #menux.active{
+    margin-left:-16%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+ }
+
+ .contenidoInner{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+ }
 
 .navcliente .navbar{
     background-color: #0084da!important;
@@ -76,6 +90,8 @@
 
 .sidebarOutside{
     height: 100%!important;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .sidebar{
@@ -83,7 +99,7 @@
     background-color: #0084da !important;
 }
 
-.content-cliente{
+.content-main{
     height: 100%;
 }
 .navcliente .span-sidebar{
@@ -111,27 +127,166 @@
 
 }
 
-.content-cliente .contenidoInner{
+.content-main .contenidoInner{
     overflow-y: auto;
     height: 100%;
     position: relative;
 }
 
-.content-cliente .contenidoInner::-webkit-scrollbar-track
+.content-main .contenidoInner::-webkit-scrollbar-track
 {
 	border: 5px solid white;
 	border-color: transparent;
 	background-color: #d3d3d3;
 }
 
-.content-cliente .contenidoInner::-webkit-scrollbar
+.content-main .contenidoInner::-webkit-scrollbar
 {
 	width: 7px;
 	background-color: #dfe6e9;
 }
 
-.content-cliente .contenidoInner::-webkit-scrollbar-thumb
+.content-main .contenidoInner::-webkit-scrollbar-thumb
 {
 	background-color: #74b9ff;
 	border-radius: 10px;
 }
+
+/*Inicio Cliente*/
+
+@media (max-width:1000px){
+    .containerMascotas{
+        padding-right: 0;
+    }
+    .calendario{
+        padding-right: 0;
+    }
+
+    .contenedorMascota{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/*Mascotas*/
+.listMascotas{
+    background-color: #fff;
+}
+.listMascotas .list-group-item{
+    min-height: 180px;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.listMascotas .list-group-item:last-child{
+    border-bottom: none;
+}
+
+
+.tp-body{
+    font-size:1.2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.imgmascota img{
+    border-radius: 10% !important;
+    width: 175px!important;
+}
+
+.footermascota a{
+    text-decoration: none !important;
+    color: #212024 ;
+}
+
+.footermascota i{
+    margin-top: 10px !important;
+    color: #0084da !important;
+    font-size:1.8rem;
+    
+}
+
+.footermascota i:hover{
+    color: #02d4ba !important;
+}
+
+.bgcircle{
+  background-color: #1fb8ff4b;
+  border-radius: 100%;
+  line-height: 52px; 
+  height: 50px;
+  width: 50px;
+  display:inline-block;
+}
+
+.btnMascotas{
+    color: #f3f4f5 !important;
+    background-color: #0084da;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.btnMascotas:hover{
+    color: #f3f4f5 !important;
+    background-color: #02d4ba;
+
+}
+
+
+.nom-body{
+    display: flex;
+    align-items: center;
+    vertical-align:middle;
+}
+
+
+
+
+.listMascotas .list-group-item a{
+    color:#0084da;
+    font-weight: bold;
+
+}
+
+/* CALENDARIO */
+
+.fc-scrollgrid {
+    border: transparent !important;
+    border-radius: 5% !important;
+    background-color: #f3f4f5 !important;
+}
+.fc .fc-col-header-cell-cushion {
+    color: #202124 !important;
+    display: inline-block;
+    padding: 2px 4px;
+    text-decoration: none;
+}
+
+.fc .fc-daygrid-day-number {
+    text-decoration: none;
+    color: #0084da !important;
+}
+
+.fc-today-button{
+    display: none;
+}
+
+.fc td, .fc th {
+    border-style: none !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fc-day-today {
+    background-color: #0083da5b!important;
+}
+
+.fc-toolbar-title{
+    font-size: 1.3rem !important;
+    text-transform: capitalize;
+}
+
+
+
