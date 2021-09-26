@@ -1,12 +1,13 @@
 from typing import Type
 from django.core import mail
+from django.db.models.fields.related import ForeignKey
 from django.http import request
 from django.http.response import HttpResponseRedirect, HttpResponse
 from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.views import LoginView
 from .forms import LoginCaptcha
-from django.contrib.auth.models import User
+from .models import User
 from django.views import generic
 from .forms import CUserCreationForm
 from django.contrib.auth.models import Group
@@ -19,6 +20,11 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+
+
+
+
+
 
 class CLoginView(LoginView):
     template_name = "login.html"
@@ -83,6 +89,10 @@ def socialSuccess(request):
     user.groups.add(defaultgroup)
 
     return redirect('login')
+
+
+
+#Agregar ciudades y departamentos
 
 
     

@@ -1,0 +1,9 @@
+Baños:
+
+Cliente.
+Paciente.
+Fecha.
+Franja del dia.
+Motivo.
+Tipo de baño.
+Confirmacion

@@ -1,0 +1,62 @@
+Usuarios:
+
+Usuario Cliente:
+--------------------------------------------
+Crear cuenta.
+Actualizar sus datos.
+Crear mascotas.
+Actualizar datos mascotas.
+Solicitar citas.
+Solicitar baños.
+Ver citas programadas.
+Actualizar hora de citas o cancelar (maximo 1 dia antes).
+Ver historial de citas.
+Ver historial de baños.
+Ver historial de hospitalizaciones.
+Ver informes graficos del peso de sus mascotas.
+
+Usuario Veterinario:
+---------------------------------------------
+Crear cuenta de cliente (En emergencias.)
+Asociar mascota al cliente. 
+Crear nueva cita (En emergencias).
+Actualizar sus datos.
+Ver citas programadas.
+Solicitar hospitalizaciones.
+Agregar notas a las hospitalizaciones.
+Finalizar hospitalizaciones.
+Ver historial de sus citas realizadas.
+Agregar documentos a las citas (Examenes).
+
+
+Usuario administrador:
+------------------------------------------
+Crear cuenta de cliente.
+Asociar mascotas al cliente.
+Crear citas.
+Actualizar citas.
+Crear veterinarios.
+Crear usuario Auxiliar.
+Actualizar veterinarios (Borrarlos).
+Ver todas las citas programadas.
+Solicitar hospitalizaciones.
+Agregar notas a las hospitalizaciones
+Finalizar hospitalizaciones.
+Ver el historial de todas las citas.
+Crear baños.
+Actualizar baños.
+Ver historial de baños.
+
+Usuario Auxiliar(Baños):
+------------------------------------------
+Crear baños.
+Actualizar baños.
+Crear cuenta de cliente.
+Asociar mascotas al cliente.
+Actualizar sus datos.
+
+
+
+
+
+

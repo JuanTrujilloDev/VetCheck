@@ -1,0 +1,44 @@
+Citas:
+
+Las citas podran ser solicitadas por los clientes, los datos de Subespecialidad para abajo podran llenarse por el veterinario escogido para la cita.
+Si el paciente llega por urgencias el veterinario podra crear el usuario de la persona y asociarle una mascota.
+Si el veterinario crea el perfil, usuario debe ser activo por defecto.
+Si el paciente ya existe solo debera escogerlo.
+Clientes deben tener perfil para que el veterinario pueda agregar la mascota.
+
+Cliente solicitante.
+Paciente.
+Fecha de la cita.
+Datos del paciente:
+	-Edad.
+	-Peso.
+	-Tipo mascota.
+Especialidad.
+Veterinario. 
+Motivo.
+Confirmacion
+Subespecialidad. -> Lo pone el veterinario
+Anamnesis.
+Examen Fisico:
+	-Temperatura
+	-Peso.
+	-Mucosas.
+	-Sistema Digestivo.
+	-Sistema Respiratorio.
+	-Sistema Circulatorio.
+	-Sistema Urinario.
+	-Sistema Genital.
+	-Sistema Nervioso
+	-Sistema locomotor.
+	-Sistema Tegumetario.
+Vacunas.
+Antiparasitarios.
+Muestras o examenes remitidas.
+Diagnistico.
+Posible patologia.
+Tratamiento.
+Receta.
+Adjunto de imagenes (Pruebas de examenes).
+
+
+

@@ -288,5 +288,26 @@
     text-transform: capitalize;
 }
 
+.fc-prev-button, .fc-next-button{
+    background-color: transparent!important;
+    border:none;
+}
+
+.fc-prev-button, .fc-next-button span{
+    color:#0084da;
+}
+
+.fc-prev-button span:hover, .fc-next-button span:hover{
+    color:#202124;
+}
+
+.fc-prev-button:hover span, .fc-next-button:hover span{
+    color:#202124;
+}
+
+.fc-prev-button:focus span, .fc-next-button:focus span{
+    color:#202124;
+}
+
 
 

@@ -1,0 +1,10 @@
+Hospitalizaciones
+
+Paciente.
+Fecha de entrada.
+Estado.
+Motivo.
+Peso.
+Observaciones.
+Notas. -> Todo lo que se le ha hecho.
+Finalizado. Boolean

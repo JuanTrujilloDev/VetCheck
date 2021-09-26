@@ -1,0 +1,10 @@
+Consentimientos:
+
+Fecha.
+Motivo.
+Descripcion.
+Veterinario.
+Paciente.
+Cliente.
+Firmas (Se crearia al imprimir el consentimiento).
+Imagen.
