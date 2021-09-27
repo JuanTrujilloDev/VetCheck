@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser, Group
 from django.core.validators import RegexValidator
 from PIL import Image
 from django.utils.text import slugify
+from django.urls import reverse
 
 
 class User(AbstractUser):
@@ -13,7 +14,7 @@ class PerfilCliente (models.Model):
     nombres = models.CharField(verbose_name= "Nombres", max_length= 40)
     apellidos = models.CharField(verbose_name="Apellidos", max_length= 75)
     phone_regex = RegexValidator(regex='^(3)([0-9]){9}$', message = "Por favor escribe el numero en el formato aceptado sin codigo de area ej: 3123456789")
-    phone = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Telefono")
+    phone = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Telefono", unique=True)
     direccion = models.CharField(verbose_name= "Direccion", max_length = 60)
     slug = models.SlugField(null=True, blank = True)
     class Ciudades(models.IntegerChoices):
@@ -44,9 +45,9 @@ class PerfilCliente (models.Model):
         slug = slugify(self.usuario.username)
         super().save(*args, **kwargs)
 
-    #get_absolute_url para el perfil
+   #get_absolute_url para el perfil
     def get_absolute_url(self):
-        pass
+        return reverse('profile-cliente')
     
 
 
@@ -66,7 +67,7 @@ class PerfilVeterinario(models.Model):
     nombres = models.CharField(verbose_name= "Nombres", max_length= 40)
     apellidos = models.CharField(verbose_name="Apellidos", max_length= 75)
     phone_regex = RegexValidator(regex='^(3)([0-9]){9}$', message = "Por favor escribe el numero en el formato aceptado sin codigo de area ej: 3123456789")
-    phone = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Telefono")
+    phone = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Telefono", unique=True)
     direccion = models.CharField(verbose_name= "Direccion", max_length = 60)
     slug = models.SlugField(null=True, blank = True)
     class Ciudades(models.IntegerChoices):
@@ -122,7 +123,7 @@ class PerfilAdmin (models.Model):
     nombres = models.CharField(verbose_name= "Nombres", max_length= 40)
     apellidos = models.CharField(verbose_name="Apellidos", max_length= 75)
     phone_regex = RegexValidator(regex='^(3)([0-9]){9}$', message = "Por favor escribe el numero en el formato aceptado sin codigo de area ej: 3123456789")
-    phone = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Telefono")
+    phone = models.CharField(validators=[phone_regex], max_length=10, verbose_name="Telefono", unique=True)
     direccion = models.CharField(verbose_name= "Direccion", max_length = 60)
     slug = models.SlugField(null=True, blank = True)
     class Ciudades(models.IntegerChoices):
@@ -153,8 +154,6 @@ class PerfilAdmin (models.Model):
         slug = slugify(self.usuario.username)
         super().save(*args, **kwargs)
 
-    #get_absolute_url para el perfil
-    def get_absolute_url(self):
-        pass
+ 
 
 

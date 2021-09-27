@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'VetCheck',
     'vetmain',
     'users.apps.UsersConfig',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -126,6 +129,17 @@ USE_TZ = True
 RECAPTCHA_PUBLIC_KEY = "6LdkWyocAAAAAP1BsOJJ5o-8XOzfoprsbcC3wykp"
 
 RECAPTCHA_PRIVATE_KEY = os.environ["recaptcha"]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = 'media/'
+
+DJANGORESIZED_DEFAULT_SIZE = [500, 300]
+DJANGORESIZED_DEFAULT_QUALITY = 75
+DJANGORESIZED_DEFAULT_KEEP_META = True
+DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
+DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'JPEG': ".jpg"}
+DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 
 
 # Static files (CSS, JavaScript, Images)

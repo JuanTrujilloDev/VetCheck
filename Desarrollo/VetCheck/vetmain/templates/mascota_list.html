@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/vetmain.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css">
+{% endblock %}
+
+{% block content %}
+<section class="home-main">
+{% include 'navmain.html' %}
+
+
+
+{% if request.user.perfilcliente %}
+{% load static %}
+
+<section class="content-main row d-flex justify-content-center">
+
+  {% include 'menu-izquierda.html' %}
+    <div class="col-lg-10 col-sm-12 contenidoInner row d-flex justify-content-center px-0">
+       <div class="col-md-8 py-5">
+        <h1>Lista Mascotas:</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {% if object_list %}
+          {% for object in object_list %}
+          <a style="text-decoration: none" href="{{object.get_absolute_url}}">
+            <div class="col">
+              <div class="card">
+                <img
+                  src="{{object.imagen.url}}"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{object.nombre}}</h5>
+                  <p class="card-text">
+                    {{object.descripcion}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+          {% endif %}
+           
+            </div>
+          </div>
+    </div>
+      
+    </div>
+
+</section>
+
+{% endif %}
+
+{% endblock %}
+

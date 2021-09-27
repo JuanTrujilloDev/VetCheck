@@ -3,56 +3,32 @@
 <section class="container row">
     <div class=" col-xl-7 col-sm-12 py-5 mb-sm-5 containerMascotas">
         <ul class="list-group  contentCard listMascotas py-3 px-3">
-            <h3 class="px-3">Mis Mascotas</h3>
+            <div class="row">
+            <h3 class=" col-md-9">Mis Mascotas</h3> <a class="btn btn-primary col-md-2" href="{% url 'create-mascota' %}">Agregar mascota</a>
+            </div>
+            {% if mascotas %}
+            {% for mascota in mascotas %}
             <li class="list-group-item">
                 <div class="row contenedorMascota">
                     <div class="imgmascota text-center col-md-4 col-sm-6"><img class="" src="https://cdn.pixabay.com/photo/2014/01/11/23/40/guinea-pig-242520_960_720.jpg" ></div>
                     <div class="bodymascota col-sm-6  col-md-4 row text-break mb-3">
-                        <h5 class="nom-body mb-0">Fisgon</h5>
-                        <h6 class="tp-body mt-0">Guinea pig</h6>
-                        <h7 class="text-break">Gordito, peludo, color café con blanco</h7>
+                        <h5 class="nom-body mb-0">{{mascota.nombre}}</h5>
+                        <h6 class="tp-body mt-0">{{mascota.get_grupo_display}}</h6>
+                        <h7 class="text-break">{{mascota.descripcion}}</h7>
                     </div>
                     <div class="footermascota col-md-4 col-sm-12 mt-xs-5 row d-flex align-items-center">
-                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-weight"></i></span><h6 class="mt-3">1kg</h6></a>
+                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-weight"></i></span><h6 class="mt-3">{{mascota.peso}}kg</h6></a>
                         </div> 
-                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-birthday-cake"></i></span><h6 class="mt-3">Edad</h6></a></div>
-                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-venus"></i></span><h6 class="mt-3">Sexo</h6></a></div>
+                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-birthday-cake"></i></span><h6 class="mt-3">{{mascota.get_edad}} años</h6></a></div>
+                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-venus"></i></span><h6 class="mt-3">{{mascota.sexo}}</h6></a></div>
                     </div>
                 </div>
             </li>
-            <li class="list-group-item">
-                <div class="row contenedorMascota">
-                    <div class="imgmascota text-center col-md-4 col-sm-6"><img class="" src="https://cdn.pixabay.com/photo/2014/01/11/23/40/guinea-pig-242520_960_720.jpg" ></div>
-                    <div class="bodymascota  col-md-4 col-sm-6 row text-break mb-3">
-                        <h5 class="nom-body mb-0">Fisgon</h5>
-                        <h6 class="tp-body mt-0">Guinea pig</h6>
-                        <h7 class="text-break">Gordito, peludo, color café con blanco</h7>
-                    </div>
-                    <div class="footermascota col-md-4 col-sm-12 mt-xs-5 row d-flex align-items-center">
-                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-weight"></i></span><h6 class="mt-3">1kg</h6></a>
-                        </div> 
-                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-birthday-cake"></i></span><h6 class="mt-3">Edad</h6></a></div>
-                       <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-venus"></i></span><h6 class="mt-3">Sexo</h6></a></div>
-                    </div>
-                </div>
-            </li>
-                <li class="list-group-item">
-                    <div class="row contenedorMascota">
-                        <div class="imgmascota text-center col-md-4 col-sm-6"><img class="" src="https://cdn.pixabay.com/photo/2014/01/11/23/40/guinea-pig-242520_960_720.jpg" ></div>
-                        <div class="bodymascota  col-md-4 col-sm-6 row text-break mb-3">
-                            <h5 class="nom-body mb-0 text-break">Fisgon</h5>
-                            <h6 class="tp-body mt-0 text-break">Guinea pig</h6>
-                            <h7 class="text-break">Gordito, peludo, color café con blancas123435678</h7>
-                        </div>
-                        <div class="footermascota col-md-4 col-sm-12 mt-xs-5 row d-flex align-items-center">
-                           <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-weight"></i></span><h6 class="mt-3">1kg</h6></a>
-                            </div> 
-                           <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-birthday-cake"></i></span><h6 class="mt-3">Edad</h6></a></div>
-                           <div class="col text-center"><a href="#"><span class=" bgcircle"><i class="fas fa-venus"></i></span><h6 class="mt-3">Sexo</h6></a></div>
-                        </div>
-                    </div>
-                 </li>
+            {% endfor %}
+            {% if mascotas.count >= 3 %}
             <a class="btn btnMascotas">Ver todas mis mascotas</a>
+            {% endif %}
+            {% endif %}
         </ul>
     </div>
 

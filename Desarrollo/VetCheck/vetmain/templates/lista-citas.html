@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/vetmain.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.css">
+{% endblock %}
+
+
+{% block script %}
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.js'></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'timeGridDay',
+      themeSystem: 'bootstrap',
+      events: [
+        {% for object in object_list %}
+        {
+        title: "{{ object.veterinario.nombres }} - {{object.get_subespecialidad_display}}",
+        start : '{{ object.fecha | date:"Y-m-d H:i" }}',
+        end : '{{object.get_hora_final | date:"Y-m-d H:i"}}',
+        url : '{{object.get_absolute_url}}',
+        
+        },
+        {% endfor %}
+      ],
+    });
+    calendar.render();
+  });
+
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="home-main">
+{% include 'navmain.html' %}
+
+
+
+{% if request.user.perfilcliente %}
+{% load static %}
+
+<section class="content-main row d-flex justify-content-center">
+
+    {% include 'menu-izquierda.html' %}
+
+    <div class="col-lg-10 col-sm-12 contenidoInner row d-flex justify-content-center px-0">
+       <div class="col-md-8 py-5">
+        <h1>Citas Mascota:</h1>
+        </div>
+        <div id="calendar">
+
+
+        </div>
+      
+    </div>
+
+</section>
+
+{% endif %}
+
+{% endblock %}
+
