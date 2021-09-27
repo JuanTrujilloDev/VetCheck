@@ -26,10 +26,10 @@
           <a class="nav-link inicioIndex" href="{% url 'home-cliente' %}">VetCheck</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link inicioIndex" href="#">Solicitar Cita</a>
+          <a class="nav-link inicioIndex" href="{% url 'lista-citas'%}">Solicitar Cita</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link inicioIndex" href="#">Cerrar Sesión</a>
+          <a class="nav-link inicioIndex" href="{% url 'logout' %}">Cerrar Sesión</a>
         </li>
         {% endif %}
 

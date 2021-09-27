@@ -86,7 +86,7 @@ def activate_email(request, uidb64, token):
 def socialSuccess(request):
     defaultgroup = Group.objects.get(name = 'Cliente')
     user = request.user
-    user.groups.add(defaultgroup)
+    user.groups = defaultgroup
 
     return redirect('login')
 

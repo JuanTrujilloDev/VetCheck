@@ -41,7 +41,9 @@ class Mascota(models.Model):
         edad = datetime.now().date() - self.edad
         edad = "%.2f" % round(edad.days / 365.25, 1)
         return edad
-    
+        
+    def __str__(self):
+        return self.nombre
 
 
 class HistoriaClinica(models.Model):

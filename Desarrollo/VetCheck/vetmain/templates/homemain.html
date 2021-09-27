@@ -36,11 +36,23 @@
   document.addEventListener('DOMContentLoaded',function(){
         var calendarUI = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarUI,{
+            events: [
+                    {% for object in citas %}
+                    {
+                    title: "{{ object.veterinario.nombres }} - {{object.get_subespecialidad_display}}",
+                    start : '{{ object.fecha | date:"Y-m-d H:i" }}',
+                    end : '{{object.get_hora_final | date:"Y-m-d H:i"}}',
+                    url : '{{object.get_absolute_url}}',
+                    
+                    },
+                    {% endfor %}
+                ],
             headerToolbar: {
             left: 'prev',
             center: 'today title',
             right: 'next'
             },
+            eventBackgroundColor: 'green',
             themeSystem: 'bootstrap',
             initialView: 'dayGridMonth',
             showNonCurrentDates: false,});
