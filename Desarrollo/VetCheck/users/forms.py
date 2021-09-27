@@ -29,11 +29,11 @@ class CUserCreationForm(UserCreationForm):
             email2 = User.objects.get(email__iexact = email)
         except User.DoesNotExist:
             email2 = None
-        finally:
-            if email2 == None:
-                return email
-            else:
-                raise forms.ValidationError("El correo electronico ya esta vinculado con otra cuenta!")
+            
+        if email2 == None:
+            return email
+        else:
+            raise forms.ValidationError("El correo electronico ya esta vinculado con otra cuenta!")
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
@@ -41,11 +41,10 @@ class CUserCreationForm(UserCreationForm):
             username2 = User.objects.get(username__iexact = username)
         except User.DoesNotExist:
             username2 = None
-        finally:
-            if username2 == None:
-                return username
-            else:
-                raise forms.ValidationError("El usuario ya se encuentra registrado")
+        if username2 == None:
+            return username
+        else:
+            raise forms.ValidationError("El usuario ya se encuentra registrado")
 
 
     def __init__(self, *args, **kwargs):
