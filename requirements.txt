@@ -9,7 +9,7 @@ numpy==1.21.0
 pipenv>=2022.1.8
 pytz==2021.1
 six==1.15.0
-sqlparse==0.4.1
+sqlparse>=0.4.2
 virtualenv==20.4.3
 virtualenv-clone==0.5.4
 django-crispy-forms == 1.12.0
