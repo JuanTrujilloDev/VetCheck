@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["VetCheck"]
+SECRET_KEY = 'ge*e1ikou59e%xk^3wd4)2x7j^knjy)a%)%53m%)9_k5pt!zss'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -128,7 +128,7 @@ USE_TZ = True
 
 RECAPTCHA_PUBLIC_KEY = "6LdkWyocAAAAAP1BsOJJ5o-8XOzfoprsbcC3wykp"
 
-RECAPTCHA_PRIVATE_KEY = os.environ["recaptcha"]
+RECAPTCHA_PRIVATE_KEY = 'AIzaSyCo_ftB9UnPp_G1zdMZyHAOo3b_A3OF2vk'
 
 MEDIA_URL = '/media/'
 
@@ -163,7 +163,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #AUTHENTICATION APIs
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "177264423843-r6e952gbpr8kp7ta2jffs584b7l1os1q.apps.googleusercontent.com"
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ["goauth2"]
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'AIzaSyCo_ftB9UnPp_G1zdMZyHAOo3b_A3OF2vk'
 
 
 #AUTHENTICATION BACKENDS
@@ -181,8 +181,8 @@ SOCIAL_AUTH_NEW_USER_REDIRECT_URL = 'social-success'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = os.environ['EMAIL_ID']
-EMAIL_HOST_PASSWORD = os.environ['EMAIL_PW']
+EMAIL_HOST_USER = 'sarsu1104@gmail.com'
+EMAIL_HOST_PASSWORD = 'juanxlaura1104'
 EMAIL_PORT = 587
 
 LOGIN_REDIRECT_URL = 'home'
